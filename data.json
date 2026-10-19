@@ -1,0 +1,20 @@
+{
+  "polls": [
+    {
+      "id": "61cb480c-ebe2-4233-9234-b2cb802f8cd9",
+      "title": "Test Poll",
+      "options": [
+        {
+          "text": "Option A",
+          "votes": 0
+        },
+        {
+          "text": "Option B",
+          "votes": 0
+        }
+      ],
+      "pin": "1234",
+      "createdAt": "2026-10-19T13:35:34.128Z"
+    }
+  ]
+}

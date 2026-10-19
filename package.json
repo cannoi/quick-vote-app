@@ -1,0 +1,19 @@
+{
+  "name": "binh-chon-nhanh",
+  "version": "1.0.1",
+  "description": "Quick Vote App - Real-time lightweight polling with PIN protection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha test/server.test.js --exit"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bình Chọn Nhanh - Quick Vote App</title>
+  <link rel="stylesheet" href="style.css">
+<style>.paf-made-by{position:fixed;right:8px;bottom:8px;width:min(72px,12vw);max-width:12vw;height:auto;object-fit:contain;opacity:.5;background:transparent;padding:0;border:0;box-shadow:none;filter:none;pointer-events:none;z-index:30}</style></head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>🗳️ Bình Chọn Nhanh</h1>
+      <p class="subtitle">Quick & Secure Polling Platform</p>
+    </header>
+
+    <main id="main-content">
+      <!-- Home / Create View -->
+      <section id="create-section" class="card">
+        <h2>Tạo cuộc bình chọn mới</h2>
+        <form id="create-form">
+          <div class="form-group">
+            <label for="title">Tiêu đề câu hỏi / Chủ đề *</label>
+            <input type="text" id="title" required placeholder="Ví dụ: Đi ăn trưa ở đâu hôm nay?">
+          </div>
+          <div class="form-group">
+            <label for="description">Mô tả chi tiết (không bắt buộc)</label>
+            <textarea id="description" placeholder="Thêm thông tin hướng dẫn cho người tham gia..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="pin">Mã PIN bảo vệ (để quản lý & xác thực) *</label>
+            <input type="password" id="pin" required placeholder="Ví dụ: 1234" maxlength="6">
+          </div>
+          <div class="form-group">
+            <label>Các lựa chọn bình chọn (ít nhất 2) *</label>
+            <div id="options-container">
+              <input type="text" class="option-input" required placeholder="Lựa chọn 1">
+              <input type="text" class="option-input" required placeholder="Lựa chọn 2">
+            </div>
+            <button type="button" id="add-option-btn" class="secondary-btn">+ Thêm lựa chọn</button>
+          </div>
+          <button type="submit" class="primary-btn">Tạo Bình Chọn</button>
+        </form>
+      </section>
+
+      <!-- Poll View (Hidden by default) -->
+      <section id="poll-section" class="card" style="display: none;">
+        <div id="poll-header">
+          <h2 id="poll-title">Đang tải...</h2>
+          <p id="poll-desc"></p>
+          <div id="poll-status-badge" class="badge">Đang mở</div>
+        </div>
+
+        <!-- PIN Verification Gate -->
+        <div id="pin-gate" class="gate-box">
+          <h3>Nhập mã PIN để tham gia bình chọn</h3>
+          <div class="form-group">
+            <input type="password" id="voter-pin" placeholder="Nhập mã PIN của cuộc khảo sát" maxlength="6">
+          </div>
+          <button id="verify-pin-btn" class="primary-btn">Xác nhận PIN</button>
+          <p id="pin-error" class="error-text"></p>
+        </div>
+
+        <!-- Voting Interface -->
+        <div id="voting-box" style="display: none;">
+          <form id="vote-form">
+            <div id="vote-options-list" class="options-list">
+              <!-- Dynamically populated -->
+            </div>
+            <button type="submit" class="primary-btn">Gửi Phiếu Bình Chọn</button>
+          </form>
+        </div>
+
+        <!-- Results Interface -->
+        <div id="results-box" style="display: none;">
+          <h3>Kết quả bình chọn trực tiếp</h3>
+          <div id="results-chart" class="chart-container">
+            <!-- Dynamically populated bars -->
+          </div>
+          <div class="admin-controls">
+            <button id="share-link-btn" class="secondary-btn">Sao chép liên kết chia sẻ</button>
+            <button id="close-poll-btn" class="danger-btn">Kết thúc bình chọn (Yêu cầu PIN)</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Bình Chọn Nhanh — Quick Vote App &bull; <a href="#" id="new-poll-link">Tạo cuộc khảo sát mới</a></p>
+    </footer>
+  </div>
+
+  <!-- Made with App Builder Badge -->
+  
+
+  <script src="app.js"></script>
+<img class="paf-made-by" src="/made-by.png" alt="Made with App Builder — Pi SoloHost"></body>
+</html>
